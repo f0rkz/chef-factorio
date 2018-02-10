@@ -1,0 +1,19 @@
+{
+  "_comment": "Sizes can be specified as none, very-low, low, normal, high, very-high",
+
+  "terrain_segmentation": "<%= @map_settings['terrain_segmentation'] %>",
+  "water": "<%= @map_settings['water'] %>",
+  "width": <%= @map_settings['width'] %>,
+  "height": <%= @map_settings['height'] %>,
+  "starting_area": "<%= @map_settings['starting_area'] %>",
+  "peaceful_mode": <%= @map_settings['peaceful_mode'] %>,
+  "autoplace_controls":
+  {
+    "coal": {"frequency": "<%= @coal['frequency'] %>", "size": "<%= @coal['size'] %>", "richness": "<%= @coal['richness'] %>"},
+    "copper-ore": {"frequency": "<%= @copper_ore['frequency'] %>", "size": "<%= @copper_ore['size'] %>", "richness": "<%= @copper_ore['richness'] %>"},
+    "crude-oil": {"frequency": "<%= @crude_oil['frequency'] %>", "size": "<%= @crude_oil['size'] %>", "richness": "<%= @crude_oil['richness'] %>"},
+    "enemy-base": {"frequency": "<%= @enemy_base['frequency'] %>", "size": "<%= @enemy_base['size'] %>", "richness": "<%= @enemy_base['richness'] %>"},
+    "iron-ore": {"frequency": "<%= @iron_ore['frequency'] %>", "size": "<%= @iron_ore['size'] %>", "richness": "<%= @iron_ore['richness'] %>"},
+    "stone": {"frequency": "<%= @stone['frequency'] %>", "size": "<%= @stone['size'] %>", "richness": "<%= @stone['richness'] %>"}
+  }
+}

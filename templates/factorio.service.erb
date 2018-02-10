@@ -1,0 +1,15 @@
+[Unit]
+Description=Factorio Server
+Wants=network-online.target
+After=syslog.target network.target nss-lookup.target network-online.target
+
+[Service]
+WorkingDirectory=<%= @working_directory %>
+ExecStart=<%= @exec_start %> --server-settings <%= @config_dir %>/server-settings.json --bind <%= @server_options['bind'] %> --port <%= @server_options['port'] %> <% if @server_options['rcon_port'] %>--rcon-port <%= @server_options['rcon_port'] %> <% end %><% if @server_options['rcon_password'] %>--rcon-password <%= @server_options['rcon_password'] %> <% end %> --console-log <%= @server_options['console_log'] %> --start-server <%= @save_dir %>/<%= @save_name %>.zip
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s INT $MAINPID
+User=<%= @user %>
+Group=<%= @group %>
+
+[Install]
+WantedBy=multi-user.target
