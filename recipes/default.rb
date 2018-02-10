@@ -36,19 +36,20 @@ version_url = doc[%r{/get-download\/[\S]+\/headless\/linux64}]
 version = version_url[/[0-9]+\.+[0-9]+\.+[0-9]+/]
 download_url = "https://www.factorio.com/get-download/#{version}/headless/linux64"
 
+user node['factorio']['user'] do
+  comment 'Factorio gameserver user'
+  system true
+  shell '/bin/bash'
+  home node['factorio']['install_dir']
+  manage_home false
+end
+
 directory node['factorio']['install_dir'] do
   owner node['factorio']['user']
   group node['factorio']['user']
   mode '0755'
   recursive true
   action :create
-end
-
-user node['factorio']['user'] do
-  comment 'Factorio gameserver user'
-  system true
-  shell '/bin/bash'
-  home node['factorio']['install_dir']
 end
 
 directory node['factorio']['save_dir'] do

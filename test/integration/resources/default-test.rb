@@ -3,9 +3,9 @@ describe user('factorio') do
   its('shell') { should eq '/bin/bash' }
 end
 
-describe file('/opt/factorio/factorio') do
+describe directory('/opt/factorio/factorio') do
   it { should exist }
-  it { should be_file }
+  it { should be_directory }
   it { should be_owned_by 'factorio' }
   its('group') { should eq 'factorio' }
 end
