@@ -72,7 +72,13 @@ default['factorio']['map_gen_settings'] = {
     stone: {
       frequency: "normal",
       size: "normal",
-      richness: "high"}
+      richness: "high"
+    },
+    uranium_ore: {
+      frequency: "normal",
+      size: "normal",
+      richness: "high"
+    },
   }
 }
 

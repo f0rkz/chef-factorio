@@ -104,6 +104,7 @@ template map_gen_conf do
     enemy_base: node['factorio']['map_gen_settings']['autoplace_controls']['enemy_base'],
     iron_ore: node['factorio']['map_gen_settings']['autoplace_controls']['iron_ore'],
     stone: node['factorio']['map_gen_settings']['autoplace_controls']['stone'],
+    uranium: node['factorio']['map_gen_settings']['autoplace_controls']['uranium']
   })
 end
 
